@@ -1,8 +1,20 @@
-<p> todo Component </p>
-<ul>
-  <li> Project 1</li>
-  <li> Project 2</li>
-  <li> Project 3</li>
-  <li> Project 4</li>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let todo of todos, let i=index">
+    <a [href]="todo.todoImage">
+      <img [src]= "todo.todoImage">
+    </a>
+    {{ todo.todoName }}
+    <button class="btn btn-primary"
+            [disabled]="todo.todoStatus"
+            (click)="onChangeStatus(i)">
+      En Coure
+    </button>
+    <button class="btn btn-success"
+            [disabled]="!todo.todoStatus"
+            (click)="onChangeStatus(i)">
+      Terminée
+    </button>
+  </li>
 </ul>
+
 
