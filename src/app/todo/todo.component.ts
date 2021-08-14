@@ -22,26 +22,34 @@ export class TodoComponent implements OnInit {
       todoName: "Projet 1",
       todoStatus: false,
       todoImage: "http://placehold.it/50",
+      todoIsModif: false
     },
     {
       todoName: "Projet 2",
       todoStatus: true,
       todoImage: "http://placehold.it/50",
+      todoIsModif: false
     },
     {
       todoName: "Projet 3",
       todoStatus: false,
       todoImage: "http://placehold.it/50",
+      todoIsModif: false
     },
     {
       todoName: "Projet 4",
       todoStatus: false,
       todoImage: "http://placehold.it/50",
+      todoIsModif: false
     }
   ];
 
   onChangeStatus(i:number): void {
     this.todos[i].todoStatus = !this.todos[i].todoStatus;
+  }
+
+  onChangeIsModif(i:number): void {
+    this.todos[i].todoIsModif = !this.todos[i].todoIsModif;
   }
 
 }

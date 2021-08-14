@@ -15,6 +15,19 @@
               (click)="onChangeStatus(i)">
         Terminée
       </button>
+
+      <button class="btn btn-danger"
+              (click)="onChangeIsModif(i)"
+              *ngIf="!todo.todoIsModif">
+        Modifier
+      </button>
+      <button class="btn btn-success"
+              (click)="onChangeIsModif(i)"
+              *ngIf="todo.todoIsModif">
+        Modification Terminée
+      </button>
+
+      <input *ngIf="todo.todoIsModif"  class="form-control" [(ngModel)]="todo.todoName" />
     </div>
   </li>
 </ul>
